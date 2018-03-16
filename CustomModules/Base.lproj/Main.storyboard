@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VlT-2a-BYL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Swipe View Contoller-->
+        <scene sceneID="rYV-MM-9Sz">
+            <objects>
+                <viewController storyboardIdentifier="SwipeViewContoller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VlT-2a-BYL" customClass="SwipeViewContoller" customModule="CustomModules" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o0E-we-a5q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VP7-bU-ngc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
+                                <color key="backgroundColor" red="0.0" green="0.94509803920000002" blue="0.93677121399999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1m-he-v6W">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pbZ-4T-vLk">
+                                        <rect key="frame" x="10" y="10" width="355" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GsF-zC-HiL">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" cyan="0.82999999999999996" magenta="0.76403921842575073" yellow="0.46999999999999997" black="0.62" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6bN-ow-a2w"/>
+                                    <constraint firstItem="pbZ-4T-vLk" firstAttribute="top" secondItem="c1m-he-v6W" secondAttribute="top" constant="10" id="8bL-5t-f0i"/>
+                                    <constraint firstAttribute="trailing" secondItem="pbZ-4T-vLk" secondAttribute="trailing" constant="10" id="G4a-ZN-kVd"/>
+                                    <constraint firstAttribute="bottom" secondItem="pbZ-4T-vLk" secondAttribute="bottom" id="NDi-61-PjT"/>
+                                    <constraint firstItem="pbZ-4T-vLk" firstAttribute="leading" secondItem="c1m-he-v6W" secondAttribute="leading" constant="10" id="t4t-Eq-yU5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.94509803920000002" blue="0.93677121399999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VP7-bU-ngc" firstAttribute="leading" secondItem="Tdc-pi-jYh" secondAttribute="leading" id="FMZ-1g-ulS"/>
+                            <constraint firstItem="c1m-he-v6W" firstAttribute="trailing" secondItem="o0E-we-a5q" secondAttribute="trailing" id="KvQ-UT-ur1"/>
+                            <constraint firstItem="Tdc-pi-jYh" firstAttribute="trailing" secondItem="VP7-bU-ngc" secondAttribute="trailing" id="QEf-Ho-K4Q"/>
+                            <constraint firstItem="VP7-bU-ngc" firstAttribute="top" secondItem="Tdc-pi-jYh" secondAttribute="top" id="Rez-tL-QUN"/>
+                            <constraint firstItem="c1m-he-v6W" firstAttribute="top" secondItem="VP7-bU-ngc" secondAttribute="bottom" id="d1F-oR-gC6"/>
+                            <constraint firstItem="c1m-he-v6W" firstAttribute="leading" secondItem="o0E-we-a5q" secondAttribute="leading" id="hh9-lb-H10"/>
+                            <constraint firstItem="c1m-he-v6W" firstAttribute="bottom" secondItem="Tdc-pi-jYh" secondAttribute="bottom" id="yeM-nt-RZU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tdc-pi-jYh"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="tabBarCollectionView" destination="pbZ-4T-vLk" id="JiM-lN-T3v"/>
+                        <outlet property="tabView" destination="c1m-he-v6W" id="te5-Ob-bpJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qqW-7O-uf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="785" y="62"/>
+        </scene>
+    </scenes>
+</document>
